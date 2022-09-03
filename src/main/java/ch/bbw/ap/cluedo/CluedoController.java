@@ -44,10 +44,10 @@ public class CluedoController {
         people.add(peacock);
     }
 
-    @GetMapping("/people")
-    public String showPeople(Model model) {
+    @GetMapping("/")
+    public String showIndex(Model model) {
         model.addAttribute("people", people);
 
-        return "people";
+        return "index";
     }
 }
