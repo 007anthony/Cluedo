@@ -45,7 +45,7 @@ public class CluedoController {
     }
 
     @GetMapping("/people")
-    public String index(Model model) {
+    public String showPeople(Model model) {
         model.addAttribute("people", people);
 
         return "people";
