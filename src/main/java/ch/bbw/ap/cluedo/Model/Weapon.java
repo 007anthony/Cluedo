@@ -3,14 +3,14 @@ package ch.bbw.ap.cluedo.Model;
 public class Weapon {
 
     private String name;
-    private int laenge;
-    private int gewicht;
+    private double laenge;
+    private double gewicht;
     private String typ;
     private String merkmal;
     private String material;
 
     // Constructor
-    public Weapon(String name, int laenge, int gewicht, String typ, String merkmal, String material) {
+    public Weapon(String name, double laenge, double gewicht, String typ, String merkmal, String material) {
         this.name = name;
         this.laenge = laenge;
         this.gewicht = gewicht;
@@ -28,19 +28,19 @@ public class Weapon {
         this.name = name;
     }
 
-    public int getLaenge() {
+    public double getLaenge() {
         return laenge;
     }
 
-    public void setLaenge(int laenge) {
+    public void setLaenge(double laenge) {
         this.laenge = laenge;
     }
 
-    public int getGewicht() {
+    public double getGewicht() {
         return gewicht;
     }
 
-    public void setGewicht(int gewicht) {
+    public void setGewicht(double gewicht) {
         this.gewicht = gewicht;
     }
 

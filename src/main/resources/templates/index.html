@@ -5,7 +5,8 @@
     <title>People</title>
 </head>
 <body>
-  <table th:each="person: ${people}" th:object="${person}">
+    <h2>People</h2>
+    <table th:each="person: ${people}" th:object="${person}">
       <thead>
         <tr>
         <th colspan="2" th:text="*{name}"></th>
@@ -30,6 +31,40 @@
         </tr>
       </tbody>
 
-  </table>
+    </table>
+    <h2>Weapons</h2>
+    <table th:each="weapon: ${weapons}" th:object="${weapon}">
+        <thead>
+            <tr>
+                <th th:text="${weapon.name}"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td th:text="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Länge</td>
+                <td th:text="*{laenge} + 'cm'"></td>
+            </tr>
+            <tr>
+                <td>Gewicht</td>
+                <td th:text="*{gewicht} + 'g'"></td>
+            </tr>
+            <tr>
+                <td>Typ</td>
+                <td th:text="*{typ}"></td>
+            </tr>
+            <tr>
+                <td>Mermal</td>
+                <td th:text="*{merkmal}"></td>
+            </tr>
+            <tr>
+                <td>Material</td>
+                <td th:text="*{material}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
