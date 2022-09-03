@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+}
+
+table {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-collapse: collapse;
+    border-radius: 50px;
+}
+
+td {
+    width: 200px;
+}
+
+.title {
+    background-color: #4029ec;
+}
+
+tr:not(.title):nth-child(even) {
+    background-color: #dbddff;
+}
+
+tr:not(.title):nth-child(odd) {
+    background-color: #afb4ff;
+}

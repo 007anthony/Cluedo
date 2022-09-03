@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>People</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <h2>People</h2>
     <table th:each="person: ${people}" th:object="${person}">
       <thead>
-        <tr>
+        <tr class="title">
         <th colspan="2" th:text="*{name}"></th>
         </tr>
       </thead>
@@ -35,7 +36,7 @@
     <h2>Weapons</h2>
     <table th:each="weapon: ${weapons}" th:object="${weapon}">
         <thead>
-            <tr>
+            <tr class="title">
                 <th colspan="2" th:text="${weapon.name}"></th>
             </tr>
         </thead>
@@ -70,7 +71,7 @@
     <h2>Rooms</h2>
     <table th:each="room: ${rooms}" th:object="${room}">
         <thead>
-            <tr>
+            <tr class="title">
                 <th colspan="2" th:text="*{name}"></th>
             </tr>
         </thead>
@@ -93,7 +94,7 @@
             </tr>
             <tr>
                 <td>Wände</td>
-                <td th:style="'background-color:rgb(' + *{wandFarbe.red} + *{wandFarbe.green} + *{wandFarbe.blue} + ')'"></td>
+                <td th:style="'background-color:rgb(' + *{wandFarbe.red} + ',' + *{wandFarbe.green} + ',' + *{wandFarbe.blue} + ')'"></td>
             </tr>
             <tr>
                 <td>Möbel</td>
