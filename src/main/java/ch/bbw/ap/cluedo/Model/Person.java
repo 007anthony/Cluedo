@@ -7,11 +7,11 @@ public class Person {
     private String name;
     private String anrede;
     private String geschlecht;
-    private String[] mermale;
+    private String mermale;
     private Color haarfarbe;
     private boolean isAlive;
 
-    public Person(String name, String anrede, String geschlecht, String[] mermale, Color haarfarbe) {
+    public Person(String name, String anrede, String geschlecht, String mermale, Color haarfarbe) {
         this.name = name;
         this.anrede = anrede;
         this.geschlecht = geschlecht;
@@ -44,11 +44,11 @@ public class Person {
         this.geschlecht = geschlecht;
     }
 
-    public String[] getMermale() {
+    public String getMermale() {
         return mermale;
     }
 
-    public void setMermale(String[] mermale) {
+    public void setMermale(String mermale) {
         this.mermale = mermale;
     }
 

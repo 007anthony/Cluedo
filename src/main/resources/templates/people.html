@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+  <table th:each="person: ${people}" th:object="${person}">
+      <thead>
+        <tr>
+        <th colspan="2" th:text="*{name}"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anrede</td>
+          <td th:text="*{anrede}"></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td th:text="*{name}"></td>
+        </tr>
+        <tr>
+          <td>geschlecht</td>
+          <td th:text="*{geschlecht}"></td>
+        </tr>
+        <tr>
+            <td>Haarfarbe</td>
+            <td th:style="'background-color:' + *{'rgb(' + haarfarbe.red + ',' + haarfarbe.green + ',' + haarfarbe.blue + ')'}"></td>
+        </tr>
+      </tbody>
+
+  </table>
+</body>
+</html>
