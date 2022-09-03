@@ -1,6 +1,7 @@
 package ch.bbw.ap.cluedo;
 
 import ch.bbw.ap.cluedo.Model.Person;
+import ch.bbw.ap.cluedo.Model.Room;
 import ch.bbw.ap.cluedo.Model.Weapon;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ public class CluedoController {
 
     // Weapons
     List<Weapon> weapons;
+
+    // Rooms
+    List<Room> rooms;
 
     public CluedoController() {
 
@@ -76,12 +80,30 @@ public class CluedoController {
         Weapon spanner = new Weapon("Spanner", 25.5, 2500, "Werkzeug", "schwer",
                 "Metal");
         weapons.add(spanner);
+
+        // Rooms
+        rooms = new ArrayList<>();
+
+        // Hall
+        Room hall = new Room("Hall", 3, 1, "kacheln", Color.white, "Tisch");
+        rooms.add(hall);
+
+        // Lounge
+        Room lounge = new Room("Lounge", 1, 5, "blauer Teppich", Color.white,
+                "Sofa, Sessel, Tisch");
+        rooms.add(lounge);
+
+        // Dining Room
+        Room diningRoom = new Room("Dining Room", 2, 4, "Holz", Color.yellow,
+                "Tisch, Komoden");
+        rooms.add(diningRoom);
     }
 
     @GetMapping("/")
     public String showIndex(Model model) {
         model.addAttribute("people", people);
         model.addAttribute("weapons", weapons);
+        model.addAttribute("rooms", rooms);
 
         return "index";
     }
