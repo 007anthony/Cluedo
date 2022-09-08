@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class CluedoController {
+public class ViewController {
 
     // People
     List<Person> people;
@@ -23,7 +23,7 @@ public class CluedoController {
     // Rooms
     List<Room> rooms;
 
-    public CluedoController() {
+    public ViewController() {
 
         people = new ArrayList<>();
 
@@ -99,12 +99,12 @@ public class CluedoController {
         rooms.add(diningRoom);
     }
 
-    @GetMapping("/")
+    @GetMapping("/showView")
     public String showIndex(Model model) {
         model.addAttribute("people", people);
         model.addAttribute("weapons", weapons);
         model.addAttribute("rooms", rooms);
 
-        return "index";
+        return "cluedolistview";
     }
 }
