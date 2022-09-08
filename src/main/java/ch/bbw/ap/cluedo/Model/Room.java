@@ -67,4 +67,10 @@ public class Room {
     public void setMoebel(String moebel) {
         this.moebel = moebel;
     }
+
+    @Override
+    public String toString() {
+        return String.format("name: %s, anzahlTueren: %d, anzahlFenster: %d, boden: %s, wandFarbe: %s, moebel: %s",
+                getName(), getAnzahlTueren(), getAnzahlFenster(), getBoden(), getWandFarbe().toString(), getMoebel());
+    }
 }

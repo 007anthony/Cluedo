@@ -68,6 +68,12 @@ public class Weapon {
         this.material = material;
     }
 
+    @Override
+    public String toString() {
+        return String.format("name: %s, laenge: %f, gewicht: %f, typ: %s, mermal: %s, material: %s",
+                getName(), getLaenge(), getGewicht(), getTyp(), getMerkmal(), getMaterial());
+    }
+
     // Method to kill a person
     public void toeten(Person person) {
         person.sterben();

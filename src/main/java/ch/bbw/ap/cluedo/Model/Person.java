@@ -56,6 +56,12 @@ public class Person {
         return haarfarbe;
     }
 
+    @Override
+    public String toString() {
+        return String.format("{name: %s, anrede: %s, geschlecht: %s, merkmale: %s, haarfarbe: %s, isAlive: %b}",
+                getName(), getAnrede(), getGeschlecht(), getMermale(), getHaarfarbe().toString(), isAlive());
+    }
+
     public void setHaarfarbe(Color haarfarbe) {
         this.haarfarbe = haarfarbe;
     }
