@@ -1,8 +1,8 @@
 package ch.bbw.ap.cluedo;
 
-import ch.bbw.ap.cluedo.Model.Person;
-import ch.bbw.ap.cluedo.Model.Room;
-import ch.bbw.ap.cluedo.Model.Weapon;
+import ch.bbw.ap.cluedo.model.Person;
+import ch.bbw.ap.cluedo.model.Room;
+import ch.bbw.ap.cluedo.model.Weapon;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

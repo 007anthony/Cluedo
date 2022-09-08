@@ -1,4 +1,4 @@
-package ch.bbw.ap.cluedo.Model;
+package ch.bbw.ap.cluedo.model;
 
 public class Weapon {
 
