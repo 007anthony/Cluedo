@@ -1,4 +1,4 @@
-package ch.bbw.ap.cluedo;
+package ch.bbw.ap.cluedo.control;
 
 import ch.bbw.ap.cluedo.model.Person;
 import ch.bbw.ap.cluedo.model.Room;
