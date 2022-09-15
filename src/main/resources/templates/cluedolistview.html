@@ -7,97 +7,68 @@
 </head>
 <body>
     <h2>People</h2>
-    <table th:each="person: ${people}" th:object="${person}">
+    <table>
       <thead>
         <tr class="title">
-        <th colspan="2" th:text="*{name}"></th>
+            <td>Anrede</td>
+            <td>Name</td>
+            <td>geschlecht</td>
+            <td>Haarfarbe</td>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Anrede</td>
-          <td th:text="*{anrede}"></td>
-        </tr>
-        <tr>
-          <td>Name</td>
-          <td th:text="*{name}"></td>
-        </tr>
-        <tr>
-          <td>geschlecht</td>
-          <td th:text="*{geschlecht}"></td>
-        </tr>
-        <tr>
-            <td>Haarfarbe</td>
+        <tr th:each="person: ${people}" th:object="${person}">
+            <td th:text="*{anrede}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{geschlecht}"></td>
             <td th:style="'background-color:' + *{'rgb(' + haarfarbe.red + ',' + haarfarbe.green + ',' + haarfarbe.blue + ')'}"></td>
         </tr>
       </tbody>
 
     </table>
     <h2>Weapons</h2>
-    <table th:each="weapon: ${weapons}" th:object="${weapon}">
+    <table>
         <thead>
             <tr class="title">
-                <th colspan="2" th:text="${weapon.name}"></th>
+                <td>Name</td>
+                <td>Länge</td>
+                <td>Gewicht</td>
+                <td>Typ</td>
+                <td>Mermal</td>
+                <td>Material</td>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Name</td>
+            <tr th:each="weapon: ${weapons}" th:object="${weapon}">
                 <td th:text="*{name}"></td>
-            </tr>
-            <tr>
-                <td>Länge</td>
                 <td th:text="*{laenge} + 'cm'"></td>
-            </tr>
-            <tr>
-                <td>Gewicht</td>
                 <td th:text="*{gewicht} + 'g'"></td>
-            </tr>
-            <tr>
-                <td>Typ</td>
                 <td th:text="*{typ}"></td>
-            </tr>
-            <tr>
-                <td>Mermal</td>
                 <td th:text="*{merkmal}"></td>
-            </tr>
-            <tr>
-                <td>Material</td>
                 <td th:text="*{material}"></td>
             </tr>
         </tbody>
     </table>
 
     <h2>Rooms</h2>
-    <table th:each="room: ${rooms}" th:object="${room}">
+    <table>
         <thead>
             <tr class="title">
-                <th colspan="2" th:text="*{name}"></th>
+                <td>Name</td>
+                <td>Anzahl Türen</td>
+                <td>Anzahl Fenster</td>
+                <td>Boden</td>
+                <td>Wände</td>
+                <td>Möbel</td>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Name</td>
+            <tr th:each="room: ${rooms}" th:object="${room}">
                 <td th:text="*{name}"></td>
-            </tr>
-            <tr>
-                <td>Anzahl Türen</td>
                 <td th:text="*{anzahlTueren}"></td>
-            </tr>
-            <tr>
-                <td>Anzahl Fenster</td>
                 <td th:text="*{anzahlFenster}"></td>
-            </tr>
-            <tr>
-                <td>Boden</td>
                 <td th:text="*{boden}"></td>
-            </tr>
-            <tr>
-                <td>Wände</td>
-                <td th:style="'background-color:rgb(' + *{wandFarbe.red} + ',' + *{wandFarbe.green} + ',' + *{wandFarbe.blue} + ')'"></td>
-            </tr>
-            <tr>
-                <td>Möbel</td>
+                <td th:style="'background-color:rgb(' + *{wandFarbe.red} + ',' + *{wandFarbe.green} + ',' + *{wandFarbe.blue} + ');border-radius:1px'"></td>
                 <td th:text="*{moebel}"></td>
             </tr>
         </tbody>
