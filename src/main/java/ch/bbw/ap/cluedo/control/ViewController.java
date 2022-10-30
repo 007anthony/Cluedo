@@ -1,8 +1,11 @@
 package ch.bbw.ap.cluedo.control;
 
+import ch.bbw.ap.cluedo.logic.GameLogic;
+import ch.bbw.ap.cluedo.model.DataService;
 import ch.bbw.ap.cluedo.model.Person;
 import ch.bbw.ap.cluedo.model.Room;
 import ch.bbw.ap.cluedo.model.Weapon;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +17,8 @@ import java.util.List;
 @Controller
 public class ViewController {
 
-    // People
-    List<Person> people;
+    @Autowired
+    private DataService dataService;
 
     // Weapons
     List<Weapon> weapons;
@@ -24,33 +27,6 @@ public class ViewController {
     List<Room> rooms;
 
     public ViewController() {
-
-        people = new ArrayList<>();
-
-        // Scarlet
-        Person scarlet = new Person("Scarlet", "Miss", "weiblich", "unwerfend schön", Color.yellow);
-        people.add(scarlet);
-
-        // Colonel Mustard
-        Person mustard = new Person("Mustard", "Colonel", "männlich", "Schnauz", Color.black);
-        people.add(mustard);
-
-        // Mrs White
-        Person white = new Person("White", "Mrs", "weiblich", "alt", Color.gray);
-        people.add(white);
-
-        // Professor Plun
-        Person plun = new Person("Plun", "Professor", "männlich", "Brille", Color.gray);
-        people.add(plun);
-
-        // Reverend Green
-        Person green = new Person("Green", "Reverend", "männlich", "Halbglatze", Color.gray);
-        people.add(green);
-
-        // Mrs Peacock
-        Person peacock = new Person("Peacock", "Mrs", "weiblich", "Schmuck", Color.gray);
-        people.add(peacock);
-
         // Weapons
         weapons = new ArrayList<>();
 
@@ -101,7 +77,7 @@ public class ViewController {
 
     @GetMapping("/showView")
     public String showIndex(Model model) {
-        model.addAttribute("people", people);
+        model.addAttribute("people", dataService.getPersons());
         model.addAttribute("weapons", weapons);
         model.addAttribute("rooms", rooms);
 
