@@ -1,8 +1,9 @@
-package ch.bbw.pr.cluedo.logic;
+package ch.bbw.ap.cluedo.logic;
 
-import ch.bbw.pr.cluedo.model.Crime;
-import ch.bbw.pr.cluedo.model.DataService;
+import ch.bbw.ap.cluedo.model.DataService;
+import ch.bbw.ap.cluedo.model.Crime;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -31,7 +32,31 @@ public class GameLogic {
     * @return true if games ends, false if another suggestion is allowed
     */
    public boolean evaluateSuggestion(Crime suggestion, Crime secret, int numberOfSuggestion, int maxNumberOfSuggestions){
-      //To be done
-      return false;
+
+      int counter = 0;
+
+      if(suggestion.getActor() == secret.getActor()) {
+         counter++;
+      }
+
+      if(suggestion.getScene() == secret.getScene()) {
+         counter++;
+      }
+
+      if(suggestion.getWeapon() == secret.getWeapon()) {
+         counter++;
+      }
+
+      List<String> history = secret.getHistory();
+
+      history.add(String.valueOf(counter));
+
+      if(counter == 3 && numberOfSuggestion <= maxNumberOfSuggestions) {
+         history.add("gewonnen");
+      } else if(numberOfSuggestion >= maxNumberOfSuggestions) {
+         history.add("verloren");
+      }
+
+      return counter == 3;
    }
 }
