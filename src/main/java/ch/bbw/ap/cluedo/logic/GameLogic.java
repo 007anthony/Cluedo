@@ -20,7 +20,14 @@ public class GameLogic {
     * @param secret  Randomly generate the secret for actor, weapon and scene.
     */
    public void setupNewGame(DataService service, Crime secret){
-      //To be done
+      Random random = new Random();
+      int person = random.nextInt(service.getPersons().size());
+      int weapon = random.nextInt(service.getWeapons().size());
+      int scene = random.nextInt(service.getScenes().size());
+
+      secret.setActor(person);
+      secret.setWeapon(weapon);
+      secret.setScene(scene);
    }
 
    /**
