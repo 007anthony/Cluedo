@@ -2,7 +2,7 @@ package ch.bbw.ap.cluedo.model;
 
 import java.awt.*;
 
-public class Room {
+public class Scene {
 
     private String name;
     private int anzahlTueren;
@@ -11,7 +11,7 @@ public class Room {
     private Color wandFarbe;
     private String moebel;
 
-    public Room(String name, int anzahlTueren, int anzahlFenster, String boden, Color wandFarbe, String moebel){
+    public Scene(String name, int anzahlTueren, int anzahlFenster, String boden, Color wandFarbe, String moebel){
         this.name = name;
         this.anzahlTueren = anzahlTueren;
         this.anzahlFenster = anzahlFenster;
